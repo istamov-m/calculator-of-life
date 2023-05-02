@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+  <main>
+    <div class="information">
+      <div>
+        <p>Day</p>
+        <input type="number" class="day-info" id="day-info" placeholder="DD" maxlength="2">
+        <p></p>
+      </div>
+      <div>
+        <p>Month</p>
+        <input type="number" class="month-info" id="month-info" placeholder="MM">
+        <p></p>
+      </div>
+      <div>
+        <p>Year</p>
+        <input type="number" class="year-info" id="year-info" placeholder="YYYY">
+        <p></p>
+      </div>
+    </div>
+
+    <span>
+      <hr>
+      <button onclick="lifeResult()"><img src="assets/images/icon-arrow.svg" alt=""></button>
+      <!-- <img src="assets/images/icon-arrow.svg" alt=""> -->
+    </span>
+
+    <div class="results">
+      <div>
+        <p id="years-result">--</p>
+        <p>years</p>
+      </div>
+      <div>
+        <p id="months-result">--</p>
+        <p>months</p>
+      </div>
+      <div>
+        <p id="days-result">--</p>
+        <p>Days</p>
+      </div>
+    </div>
+  </main>
+
+  <pre>{{monthInf.value}}</pre>
+ 
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer> -->
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 732190+126=732316 -->
+<!-- 738395+121=738516 -->
+<!-- 732316-738516=6200 -->
+<!-- 6200/365 -->
