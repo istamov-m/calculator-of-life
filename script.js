@@ -22,7 +22,46 @@ let isInformationColculated = false;
 let resultOfLife = 0;
 
 let date = new Date();
-console.log(date.monthCheck)
+console.log(date.monthCheck);
+
+function checkForErrors() {
+    let global = document.getElementsByClassName("info");
+    let errorTxt = document.getElementsByClassName("error");
+
+    let yearErr = document.getElementById('year-error'); 
+    let monthErr = document.getElementById('month-error');
+    let dayErr = document.getElementById('day-error');
+
+    let dayCheck = dayInf.value;
+    let monthCheck = monthInf.value;
+    let yearCheck = yearInf.value;
+
+    let isEverythingAllRight = true;
+
+    for(let i = 0; i < global.length; i++) {
+        if(global[i].value == "") errorTxt[i].innerHTML = "This field is required";
+    }
+
+    monthCorrector();
+    if(monthCheck > 12) {
+        isEverythingAllRight = false;
+        monthErr.innerHTML = "Must be a valid month";
+    } 
+    else if(dayCheck > 31) {
+        isEverythingAllRight = false;
+        dayErr.innerHTML = "Must be a valid day";
+    } 
+    else if(dayCheck > month) {
+        isEverythingAllRight = false;
+        dayErr.innerHTML = "Must be a valid date";
+    } 
+    if(yearCheck >= date.getFullYear()) {
+        isEverythingAllRight = false;
+        yearErr.innerHTML = "Must be in the past";
+    } 
+
+    if(isEverythingAllRight) lifeResult();
+}
 
 function monthCorrector() {
     if(isInformationColculated) {

@@ -12,24 +12,24 @@
     <div class="information">
       <div>
         <p>Day</p>
-        <input type="number" class="day-info" id="day-info" placeholder="DD" maxlength="2">
-        <p></p>
+        <input type="number" class="info" id="day-info" placeholder="DD" maxlength="2">
+        <p class="error" id="day-error"></p>
       </div>
       <div>
         <p>Month</p>
-        <input type="number" class="month-info" id="month-info" placeholder="MM">
-        <p></p>
+        <input type="number" class="info" id="month-info" placeholder="MM">
+        <p class="error" id="month-error"></p>
       </div>
       <div>
         <p>Year</p>
-        <input type="number" class="year-info" id="year-info" placeholder="YYYY">
-        <p></p>
+        <input type="number" class="info" id="year-info" placeholder="YYYY">
+        <p class="error" id="year-error"></p>
       </div>
     </div>
 
     <span>
       <hr>
-      <button onclick="lifeResult()"><img src="assets/images/icon-arrow.svg" alt=""></button>
+      <button onclick="checkForErrors()"><img src="assets/images/icon-arrow.svg" alt=""></button>
       <!-- <img src="assets/images/icon-arrow.svg" alt=""> -->
     </span>
 
