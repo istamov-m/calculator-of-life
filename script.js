@@ -6,6 +6,14 @@ let yearRes = document.getElementById('years-result');
 let monthRes = document.getElementById('months-result');
 let dayRes = document.getElementById('days-result');
 
+let global = document.getElementsByClassName("info");
+let errorTxt = document.getElementsByClassName("error");
+let titleTxt = document.getElementsByClassName("title");
+
+let yearErr = document.getElementById('year-error'); 
+let monthErr = document.getElementById('month-error');
+let dayErr = document.getElementById('day-error');
+
 let month = 0;
 let monthCounter = 0;
 let monthCheck = 0;
@@ -24,14 +32,15 @@ let resultOfLife = 0;
 let date = new Date();
 console.log(date.monthCheck);
 
+function changeColors() {
+    for(let i = 0; i < global.length; i++) {
+        global[i].style.border = "1.5px solid hsl(0, 100%, 67%)";
+        titleTxt[i].style.color = "hsl(0, 100%, 67%)";
+    }
+}
+
 function checkForErrors() {
-    let global = document.getElementsByClassName("info");
-    let errorTxt = document.getElementsByClassName("error");
-
-    let yearErr = document.getElementById('year-error'); 
-    let monthErr = document.getElementById('month-error');
-    let dayErr = document.getElementById('day-error');
-
+    alert("da");
     let dayCheck = dayInf.value;
     let monthCheck = monthInf.value;
     let yearCheck = yearInf.value;
@@ -39,7 +48,18 @@ function checkForErrors() {
     let isEverythingAllRight = true;
 
     for(let i = 0; i < global.length; i++) {
-        if(global[i].value == "") errorTxt[i].innerHTML = "This field is required";
+        if(global[i].value == "") {
+            
+            global[i].style.border = "1.5px solid hsl(0, 100%, 67%)";
+            errorTxt[i].innerHTML = "This field is required";
+            titleTxt[i].style.color = "hsl(0, 100%, 67%)";
+            isEverythingAllRight = false;
+        }
+        else if(global[i].value != "") {
+            global[i].style.border = "1.5px solid hsl(0, 0%, 86%)";
+            errorTxt[i].innerHTML = "";
+            titleTxt[i].style.color = "hsl(0, 1%, 44%)";
+        }
     }
 
     monthCorrector();
@@ -53,6 +73,7 @@ function checkForErrors() {
     } 
     else if(dayCheck > month) {
         isEverythingAllRight = false;
+        changeColors();
         dayErr.innerHTML = "Must be a valid date";
     } 
     if(yearCheck >= date.getFullYear()) {

@@ -1,12 +1,118 @@
+body {
+    position: relative;
+    background: hsl(0, 0%, 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    position: absolute;
+    background: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    border-radius: 25px 25px 200px 25px;
+    width: 45em;
+    height: 36em;
+    padding: 40px;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30em;
+    /* border: 1px solid black; */
+}
+
+.title {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: hsl(0, 1%, 44%);
+    text-transform: uppercase;
+}
+
+.info {
+    width: 100px;
+    height: 15px;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    border: 1.5px solid hsl(0, 0%, 86%);
+}
+
+.info:focus {
+    outline-width: 0;
+    border: 1.5px solid hsl(259, 100%, 65%);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type=number]{
-    -moz-appearance: textfield;
+.error {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: hsl(0, 100%, 67%);
+    transition: 0.3s all;
 }
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button span {
+    border: 1px solid hsl(0, 0%, 86%);
+    height: 0;
+    width: 40em;
+}
+
+.button button {
+    background: hsl(259, 100%, 65%);
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+}
+
+.results div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: 1px solid black; */
+    /* justify-content: space-between; */
+    width: 35em;
+    height: 8em;
+}
+
+.results div p {
+    color: hsl(259, 100%, 65%);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 90px;
+    margin: 0;
+    text-transform: lowercase;
+}
+
+.results div .title {
+    color: hsl(0, 0%, 8%);
+}
+
 
 
 .attribution { 
@@ -14,5 +120,52 @@ input[type=number]{
 }
     
 .attribution a { 
-        color: hsl(228, 45%, 44%); 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        width: 25em;
+        border-radius: 25px 25px 100px 25px;
+    }
+
+    .information {
+        width: 25em;
+        /* border: 1px solid black; */
+    }
+
+    .info {
+        width: 80px;
+    }
+
+    .button {
+        margin: 60px 0 80px 0;
+    }
+
+    .button span {
+        width: 80em;
+    }
+
+    .button button {
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+        border-radius: 100px;
+        position: absolute;
+        right: 200px;
+    }
+
+    .button svg {
+        width: 35px;
+    }
+
+    .results div {
+        /* border: 1px solid black; */
+        width: 25em;
+        height: 6em;
+    }
+
+    .results div p {
+        font-size: 70px;
+    }
 }
