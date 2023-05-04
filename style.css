@@ -125,27 +125,28 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 1000px) {
     main {
-        width: 20em;
-        height: 34em;
+        width: 18em;
+        height: 31em;
         border-radius: 25px 25px 100px 25px;
     }
 
     .information {
-        width: 20em;
+        width: 18em;
         /* border: 1px solid black; */
     }
 
     .info {
-        width: 55px;
-        font-size: 20px;
+        width: 45px;
+        height: 10px;
+        font-size: 17px;
     }
 
     .error {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .button {
-        margin: 60px 0 60px 0;
+        margin: 50px 0 50px 0;
     }
 
     .button span {
@@ -154,24 +155,24 @@ input::-webkit-inner-spin-button {
 
     .button button {
         padding: 10px;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         border-radius: 100px;
         position: absolute;
-        right: 170px;
+        right: 155px;
     }
 
     .button svg {
-        width: 35px;
+        width: 30px;
     }
 
     .results div {
         /* border: 1px solid black; */
-        width: 23em;
+        width: 20em;
         height: 6em;
     }
 
     .results div p {
-        font-size: 60px;
+        font-size: 55px;
     }
 }
