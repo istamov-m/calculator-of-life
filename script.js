@@ -29,18 +29,10 @@ let isInformationColculated = false;
 
 let resultOfLife = 0;
 
-let date = new Date();
+const date = new Date();
 console.log(date.monthCheck);
 
-function changeColors() {
-    for(let i = 0; i < global.length; i++) {
-        global[i].style.border = "1.5px solid hsl(0, 100%, 67%)";
-        titleTxt[i].style.color = "hsl(0, 100%, 67%)";
-    }
-}
-
 function checkForErrors() {
-    alert("da");
     let dayCheck = dayInf.value;
     let monthCheck = monthInf.value;
     let yearCheck = yearInf.value;
@@ -77,7 +69,10 @@ function checkForErrors() {
     } 
     else if(dayCheck > month) {
         isEverythingAllRight = false;
-        changeColors();
+        for(let i = 0; i < global.length; i++) {
+            global[i].style.border = "1.5px solid hsl(0, 100%, 67%)";
+            titleTxt[i].style.color = "hsl(0, 100%, 67%)";
+        }
         dayErr.innerHTML = "Must be a valid date";
     } 
     if(yearCheck >= date.getFullYear()) {
@@ -87,7 +82,7 @@ function checkForErrors() {
         titleTxt[2].style.color = "hsl(0, 100%, 67%)";
     } 
 
-    if(isEverythingAllRight) lifeResult();
+    if(isEverythingAllRight) correctorOfLifeTime();
 }
 
 function monthCorrector() {
@@ -155,8 +150,8 @@ function calculationOfMonthLife() {
     let bornMonth = monthInf.value;
     let bornDay = dayInf.value;
     if(parseInt(bornMonth) == (currentMonth + 1) && parseInt(bornDay) > currentDay) monthsCorrector = (12 - parseInt(bornMonth) + currentMonth + 1);
-    else if(parseInt(bornMonth) > (currentMonth + 1) /*|| parseInt(bornDay) > currentDay*/) monthsCorrector = (12 - parseInt(bornMonth) + currentMonth + 1); 
-    else if(parseInt(bornMonth) < (currentMonth + 1) /*|| parseInt(bornDay) < currentDay*/) monthsCorrector = (currentMonth + 1) - parseInt(bornMonth);
+    else if(parseInt(bornMonth) > (currentMonth + 1)) monthsCorrector = (12 - parseInt(bornMonth) + currentMonth + 1); 
+    else if(parseInt(bornMonth) < (currentMonth + 1)) monthsCorrector = (currentMonth + 1) - parseInt(bornMonth);
     console.log("monthes " + monthsCorrector);
     console.log();
 }
@@ -188,10 +183,6 @@ function calculationOfInformation() {
     isInformationColculated = true;
 }
 
-function lifeResult() {
-    correctorOfLifeTime();
-}
-
 function correctorOfLifeTime() {
     calculationOfInformation();
     calculationOfThisYear();
@@ -203,52 +194,3 @@ function correctorOfLifeTime() {
     dayRes.innerHTML = dateCorrector;
     console.log("days of life " + resultOfLife);
 }
-
-function Check() {
-    monthCorrector();
-    console.log(parseInt(yearInf.value));
-    console.log(parseInt(monthCounter));
-    // console.log(month);
-    // console.log(dayInf.value);
-    console.log(parseInt(month - dayInf.value));
-}
-
-
-
-// год рождения 732190 + месяцы 9 + дни 5 = 732467
-
-// 31+28+31+30+31+30+31+31+30+5 = ( 31 * 5 ) + (30 * 3) + 28 + 5 = 155 + 90 + 32 = 277   
-
-
-// этот год 738397 + (31+28+31+28 = 62 + 56 = 118) = 738515
-
-// 732468 - 738515 = 6048
-
-// 732 494   26
-
-
-
-
-
-
-// 738395 this year + 90 + 29 
-
-
-
-//26
-
-
-//счет месяцев
-// с 5окт до 5нояб = 31дней(1месяц), c 5нояб до 5дек = 30дней(2месяц), 
-// с 5дек до 5янв = 31дней(3месяц), 5янв до 5фев = 31дней(4месяц), 5фев до 5марта = 28дней(4месяц), 5марта до 5апр = 31дней(5месяц)
-
-// b = 10, n = 3;
-
-//m = 12, m - b = 2 + n = 5;
-
-// b = 5, n = 5
-// 12 - 5 = 6+3=9
-
-// если месяц моего рождения меньше текущего месяца то (n - b)
-// если наоборот то (12-b+n)
-//
