@@ -66,10 +66,14 @@ function checkForErrors() {
     if(monthCheck > 12) {
         isEverythingAllRight = false;
         monthErr.innerHTML = "Must be a valid month";
+        monthInf.style.border = "1.5px solid hsl(0, 100%, 67%)";
+        titleTxt[1].style.color = "hsl(0, 100%, 67%)";
     } 
     else if(dayCheck > 31) {
         isEverythingAllRight = false;
         dayErr.innerHTML = "Must be a valid day";
+        dayInf.style.border = "1.5px solid hsl(0, 100%, 67%)";
+        titleTxt[0].style.color = "hsl(0, 100%, 67%)";
     } 
     else if(dayCheck > month) {
         isEverythingAllRight = false;
@@ -79,6 +83,8 @@ function checkForErrors() {
     if(yearCheck >= date.getFullYear()) {
         isEverythingAllRight = false;
         yearErr.innerHTML = "Must be in the past";
+        yearInf.style.border = "1.5px solid hsl(0, 100%, 67%)";
+        titleTxt[2].style.color = "hsl(0, 100%, 67%)";
     } 
 
     if(isEverythingAllRight) lifeResult();
