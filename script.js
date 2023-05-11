@@ -30,7 +30,6 @@ let isInformationColculated = false;
 let resultOfLife = 0;
 
 const date = new Date();
-// console.log(date.monthCheck);
 
 function checkForErrors() {
     
@@ -143,7 +142,6 @@ function monthCorrector() {
         month = 31;
         monthCounter = 365; // 31
     }
-    // monthCheckForNow = 0;
 }
 
 function calculationOfMonthLife() {
@@ -154,7 +152,6 @@ function calculationOfMonthLife() {
     if(parseInt(bornMonth) == (currentMonth + 1) && parseInt(bornDay) > currentDay) monthsCorrector = (12 - parseInt(bornMonth) + currentMonth + 1);
     else if(parseInt(bornMonth) > (currentMonth + 1)) monthsCorrector = (12 - parseInt(bornMonth) + currentMonth + 1); 
     else if(parseInt(bornMonth) < (currentMonth + 1)) monthsCorrector = (currentMonth + 1) - parseInt(bornMonth);
-    // console.log("monthes " + monthsCorrector);
 }
 
 function calculationOfDayLife() {
@@ -164,23 +161,18 @@ function calculationOfDayLife() {
     monthCorrector();
     if(parseInt(bornDay) >= currentDay) dateCorrector = (month + currentDay) - bornDay;
     else if(parseInt(bornDay) < currentDay) dateCorrector = currentDay - bornDay;
-    // console.log("Days of life " + dateCorrector);
 }
 
 function calculationOfThisYear() {
     monthCheckForNow = date.getMonth();
     monthCorrector();
     currentDate = parseInt((date.getFullYear()) * 365) + parseInt(monthCounter) + (date.getDate());
-    // console.log("this year " + date.getFullYear() * 365);
-    // console.log("monthcounter " + monthCounter);
-    // console.log("current day " + date.getDate());
-    // console.log("current date" + currentDate);
+
 }
 
 function calculationOfInformation() {
     monthCorrector();
     wasBorne = parseInt((yearInf.value) * 365) + parseInt(monthCounter) - parseInt(month) + parseInt(dayInf.value); 
-    // console.log("wasborn " + wasBorne);
     isInformationColculated = true;
 }
 
@@ -193,6 +185,5 @@ function correctorOfLifeTime() {
     yearRes.innerHTML = Math.floor(parseInt(resultOfLife / 365));
     monthRes.innerHTML = monthsCorrector;
     dayRes.innerHTML = dateCorrector;
-    // console.log("days of life " + resultOfLife);
     isInformationColculated = false;
 }
