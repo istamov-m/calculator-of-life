@@ -75,7 +75,7 @@ function checkForErrors() {
         }
         dayErr.innerHTML = "Must be a valid date";
     } 
-    if(yearCheck >= date.getFullYear()) {
+    if(yearCheck > date.getFullYear()) {
         isEverythingAllRight = false;
         yearErr.innerHTML = "Must be in the past";
         yearInf.style.border = "1.5px solid hsl(0, 100%, 67%)";
